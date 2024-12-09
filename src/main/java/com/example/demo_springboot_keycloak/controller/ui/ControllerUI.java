@@ -9,6 +9,8 @@ import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
 public class ControllerUI {
     @GetMapping("/")
     public String getIndex(Model model, Authentication auth) {
@@ -22,7 +24,6 @@ public class ControllerUI {
         return "index.html";
     }
 
-    @PreAuthorize("hasRole('NICE')")
     @GetMapping("/nice")
     public String getNice(Model model, Authentication auth) {
         return "nice.html";

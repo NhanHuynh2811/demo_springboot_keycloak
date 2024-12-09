@@ -1,5 +1,6 @@
 server:
   port: 8085
+
 spring:
   application:
     name: spring-boot-mvc-client
@@ -16,7 +17,7 @@ spring:
           keycloak:
             provider: msm_realm
             client-id: msm
-            client-secret: ethIYYocVE8fe1sR863sJswPtQjE4sBO
+            client-secret: xSP5NF8wmOZPnrCuzK5TXa03HJbV0TZu
             authorization-grant-type: authorization_code
             scope: openid
 #  logout-url: http://localhost:8080/realms/msm_realm/protocol/openid-connect/logout

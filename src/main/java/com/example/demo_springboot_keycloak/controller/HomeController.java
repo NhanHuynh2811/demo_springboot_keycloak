@@ -26,11 +26,10 @@ public class HomeController {
     }
 
     @GetMapping("/me")
-    @PreAuthorize("hasRole('ROLE_read')")
-    public UserInfoDto getGretting(JwtAuthenticationToken auth, Authentication authentication) {
+    public UserInfoDto getGretting(Authentication authentication) {
         return new UserInfoDto(
-                auth.getToken().getClaimAsString(StandardClaimNames.PREFERRED_USERNAME),
-                auth.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList());
+                authentication.getName(),
+                authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList());
     }
 
     public static record UserInfoDto(String name, List<String> roles) {
