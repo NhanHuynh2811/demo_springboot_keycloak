@@ -19,8 +19,8 @@ public class AuthServiceImpl implements AuthService {
     private final TokenService tokenService;
     private final RestTemplate restTemplate;
 
-    @Value("${keycloak.logout-url}")
-    private String keycloakLogoutUrl;
+    //@Value("${keycloak.logout-url}")
+    private String keycloakLogoutUrl = "http://localhost:8080/realms/msm_realm/protocol/openid-connect/logout";
 
     public AuthServiceImpl(RestTemplate restTemplate, TokenService tokenService) {
         this.restTemplate = restTemplate;
