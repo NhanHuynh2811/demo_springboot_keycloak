@@ -2,13 +2,21 @@ server:
   port: 8085
 
 spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/user_mgmt
+    username: postgres
+    password: 12345678
+    driver-class-name: org.postgresql.Driver
+    hijari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
   application:
     name: spring-boot-mvc-client
   security:
     oauth2:
-#      resourceserver:
-#        jwt:
-#          issuer-uri: http://localhost:8080/realms/msm_realm
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/msm_realm
       client:
         provider:
           msm_realm:
